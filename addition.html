@@ -1,0 +1,42 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <style>
+                #one{
+                    
+                    display: inline-block;
+                    height: 200px;
+                    position: relative;
+                    left: 150px;
+                }
+            </style>
+        </head>
+        <body> 
+            <div id="one">
+                <h3>L O G I N</h3>
+                <label for="">Enter Your Email: </label>
+                <input id="email" type="text"> <br> <br>
+                <label for="">Enter Your Password :</label>
+                <input id="pass" type="text">
+                <button onclick="validation()">submit</button>
+            </div>
+            <script>
+                function validation(){
+                        let a = document.getElementById('email').value;
+                        let b = document.getElementById('pass').value;
+                        console.log(a.includes('@gmail'))
+                        if (a.includes('@gmail')){
+                            if (b==='1234') {
+                                    alert('login successfully')
+                            }
+                                    else{
+                                        alert('password is incorrect')
+                                    }
+                            
+                        }else{
+                            alert('email is incorrect')
+                        }
+                }
+            </script>
+        </body>
+    </html>

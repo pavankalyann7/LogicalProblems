@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 250px;
+            height: 250px;
+            border: 1px solid black;
+        }
+        #main #one{
+            width: 100%;
+            height: 25px;
+        }
+        #main #one input{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #main #second{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        #main #second button{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="one">
+                <input id="display" type="text">
+        </div>
+        <div id="second">
+                <button  value="1">1</button>
+                <button value="2">2</button>
+                <button value="3">3</button>
+                <button  value="4">4</button>
+                <button  value="5">5</button>
+                <button value="6">6</button>
+                <button  value="7">7</button>
+                <button  value="8">8</button>
+                <button  value="9">9</button>
+                <button  value="0">0</button>
+                <button   value="+">+</button>
+                <button   value="-">-</button>
+                <button   value="*">*</button>
+                <button   value="%">%</button>
+                <button   value="del">del</button>
+        </div>
+    </div>
+    <script>
+       let one = document.getElementById('display');
+       let second = document.querySelectorAll('#second button');
+       second.forEach((onebyone)=>{
+                let third = ''
+                onebyone.addEventListener('click',()=>{
+                    let value = onebyone.value
+                    third = third+value
+                    one.value = third;
+                })
+       })
+
+    </script>
+</body>
+</html>

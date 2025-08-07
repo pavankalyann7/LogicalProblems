@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #one{
+                background-color: red;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="one">
+            <p id="text">Python Is A Is One Of the Programming Language</p>
+        </div>
+        <p id="message"></p>
+        <button onclick="change()" >
+            change
+        </button>
+        <script>
+            let value = true;
+                function change(){
+                        let a = document.getElementById('one')
+                        if (value){
+                        a.style.color = 'blue';
+                        a.style.backgroundColor='black';
+                        value = false
+                        }
+                        else {
+                        a.style.color = 'red';
+                        a.style.backgroundColor='blue';
+                        }
+                }
+        </script>
+    </body>
+</html>
