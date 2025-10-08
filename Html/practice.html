@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Listener Examples</title>
+</head>
+<body>
+  <h2>Event Listener Examples</h2>
+
+  <!-- 1. Click -->
+  <button id="btnClick">Click Me</button>
+  <p id="clickResult"></p>
+
+  <!-- 2. Change (Checkbox, Dropdown) -->
+  <label><input type="checkbox" id="chkBox"> Accept Terms</label> <!-- read.target.checked -->
+  <p id="chkResult"></p>
+
+  <select id="dropdown">   <!--event.target.value-->
+    <option value="">Select an option</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JavaScript">JavaScript</option>
+  </select>
+  <p id="dropResult"></p>
+
+  <!-- 3. Input -->
+  <input type="text" id="txtInput" placeholder="Type something...">  <!---->
+  <p id="inputResult"></p>
+
+  <!-- 4. Submit -->
+  <form id="myForm">
+    <input type="text" placeholder="Enter name">
+    <button type="submit">Submit</button>
+  </form>
+  <p id="formResult"></p>
+
+  <!-- 5. Mouseover / Mouseout -->
+  <div id="hoverBox" style="width:150px;height:80px;background:lightblue;margin-top:10px;text-align:center;line-height:80px;">
+    Hover Me
+  </div>
+  <p id="hoverResult"></p>
+
+  <!-- 6. Keydown / Keyup -->
+  <input type="text" id="keyInput" placeholder="Press keys...">
+  <p id="keyResult"></p>
+
+  <script>
+    // 1. Click
+    document.getElementById("btnClick").addEventListener("click", () => {
+      document.getElementById("clickResult").innerText = "Button was clicked!";
+    });
+
+    // 2. Change
+    document.getElementById("chkBox").addEventListener("change", (event) => {
+      document.getElementById("chkResult").innerText = event.target.checked 
+        ? "Checkbox is checked" 
+        : "Checkbox is unchecked";
+    });
+
+    document.getElementById("dropdown").addEventListener("change", (event) => {
+      document.getElementById("dropResult").innerText = "Selected: " + event.target.value;
+    });
+
+    // 3. Input
+    document.getElementById("txtInput").addEventListener("input", (event) => {
+      document.getElementById("inputResult").innerText = "You typed: " + event.target.value;
+    });
+
+    // 4. Submit
+    document.getElementById("myForm").addEventListener("submit", (event) => {
+      event.preventDefault(); // stop page refresh 
+      document.getElementById("formResult").innerText = "Form submitted!";
+    });
+
+    // 5. Mouseover / Mouseout
+    const hoverBox = document.getElementById("hoverBox");
+    hoverBox.addEventListener("mouseover", () => {
+      document.getElementById("hoverResult").innerText = "Mouse entered the box!";
+    });
+    hoverBox.addEventListener("mouseout", () => {
+      document.getElementById("hoverResult").innerText = "Mouse left the box!";
+    });
+
+    // 6. Keydown / Keyup
+    const keyInput = document.getElementById("keyInput");
+    keyInput.addEventListener("keydown", (event) => {
+      document.getElementById("keyResult").innerText = "Key Down: " + event.key;
+    });
+    keyInput.addEventListener("keyup", (event) => {
+      document.getElementById("keyResult").innerText = "Key Up: " + event.key;
+    });
+  </script>
+</body>
+</html>
