@@ -11,3 +11,11 @@ while True:
     else:
         break
 print(results)
+
+#Prime
+User_input = int(input("enter a number for checking its prime or not : "))
+divisors_count = 0
+for i in range(1,User_input+1):
+    if User_input%i == 0: divisors_count+=1
+if divisors_count==2:print("yes its prime")
+else : print("no its not prime number")
